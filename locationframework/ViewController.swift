@@ -38,7 +38,7 @@ class ViewController: UIViewController,  CLLocationManagerDelegate, MKMapViewDel
         
         let userLocation: CLLocation = locations[0]
         
-        let latitude = userLocation.coordinate.latitude
+        /*let latitude = userLocation.coordinate.latitude
         
         let longitude = userLocation.coordinate.longitude
         
@@ -54,7 +54,22 @@ class ViewController: UIViewController,  CLLocationManagerDelegate, MKMapViewDel
         
         self.map.setRegion(region, animated: true)
         
-        //print(locations)
+        //print(locations) */
+        
+        CLGeocoder().reverseGeocodeLocation(userLocation) {  (placemarks, error) in
+            
+            if error != nil {
+                
+                print(error)
+                
+            } else {
+                
+                placemarks?[0]
+                
+            }
+            
+            
+        }
         
         
     }
