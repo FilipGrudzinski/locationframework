@@ -64,7 +64,59 @@ class ViewController: UIViewController,  CLLocationManagerDelegate, MKMapViewDel
                 
             } else {
                 
-                placemarks?[0]
+                if let placemark = placemarks?[0] {
+                    
+                    var subThoroughFare = ""
+                    
+                    if placemark.subThoroughfare != nil {
+                        
+                        subThoroughFare = placemark.subThoroughfare!
+                        
+                    }
+                    var thoroughFare = ""
+                    
+                    if placemark.thoroughfare != nil {
+                        
+                        thoroughFare = placemark.thoroughfare!
+                        
+                    }
+                    
+                    var subLocality = ""
+                    
+                    if placemark.subLocality != nil {
+                        
+                        subLocality = placemark.subLocality!
+                        
+                    }
+                    
+                    var subAdministrativeArea = ""
+                    
+                    if placemark.subAdministrativeArea != nil {
+                        
+                       subAdministrativeArea = placemark.subAdministrativeArea!
+                    
+                    }
+                    
+                    var postalCode = ""
+                    
+                    if placemark.postalCode != nil {
+                        
+                        postalCode = placemark.postalCode!
+                        
+                    }
+                    
+                    var country = ""
+                    
+                    if placemark.country != nil {
+                        
+                        country = placemark.country!
+                        
+                    }
+                    
+                    
+                    print(postalCode + country + subLocality + "\n" + subAdministrativeArea + thoroughFare + "\n" + subThoroughFare)
+                    
+                }
                 
             }
             
